@@ -4,7 +4,7 @@ let tintLevel = 255
 
 function preload() {
   song = loadSound('sound/money.mp3')
-  images = loadImages()
+  images = loadImages(drugs)
 }
 
 function setup() {
@@ -13,10 +13,20 @@ function setup() {
   button = drawButton()
 }
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight)
+  slider.remove()
+  button.remove()
+  slider = drawSlider()
+  button = drawButton()
+}
+
 function draw() {
+  button.remove()
+  button = drawButton()
   song.setVolume(slider.value())
   background(255)
-  drawImage(images[index], tintLevel)
+  drawImageAndText(images[index], tintLevel)
   drawSliderText()
   adjustTintLevelAndIndex()
 }
