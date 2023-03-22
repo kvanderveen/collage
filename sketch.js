@@ -28,7 +28,7 @@ function draw() {
   background(255)
   drawImageAndText(images[index], tintLevel)
   drawSliderText()
-  adjustTintLevelAndIndex()
+  if (song.isPlaying()) adjustTintLevelAndIndex()
 }
 
 function adjustTintLevelAndIndex() {

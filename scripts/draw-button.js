@@ -7,11 +7,5 @@ function drawButton() {
 }
 
 function togglePlaying() {
-  if (song.isPlaying()) {
-    song.pause()
-    button.html('play music')
-    return
-  }
-  song.play()
-  button.html('pause music')
+  song.isPlaying() ? song.pause() : song.play()
 }
